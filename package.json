@@ -1,0 +1,23 @@
+{
+  "name": "proj-lastminute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && npm start & cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csc302-winter-2018/proj-lastminute.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csc302-winter-2018/proj-lastminute/issues"
+  },
+  "homepage": "https://github.com/csc302-winter-2018/proj-lastminute#readme"
+}
