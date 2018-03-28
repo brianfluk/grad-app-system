@@ -12,6 +12,7 @@ class TicketListFaculty extends Component {
         fetch('/tickets')
             .then(res => res.json())
             .then(tickets => this.setState({ tickets }));
+            
     }
     render() {
         return (
