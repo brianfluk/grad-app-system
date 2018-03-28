@@ -39,8 +39,13 @@ class Login extends Component {
                         <Input type="password" name="password" id="passwordid" placeholder="password" />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="typeid">type</Label>
-                        <Input type="type" name="type" id="typeid" value={this.state.type} onChange={this.handleTypeChange} placeholder="user type" />
+                        <Label for="typeid">User Type</Label>
+                        <Input type="select" name="type" value={this.state.type} onChange={this.handleTypeChange} id="typeid">
+                            <option>Faculty</option>
+                            <option>Associate Chair Graduate</option>
+                            <option>Grad Office Staff</option>
+                            <option>Budget Director</option>
+                        </Input>
                     </FormGroup>
                     <Button onClick={this.handleSubmit}>Submit</Button>
                 </Form>

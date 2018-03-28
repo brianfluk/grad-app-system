@@ -26,7 +26,7 @@ class GapfView extends Component {
     }
     render() { 
         switch(this.state.usertype) {
-            case 'faculty':
+            case 'Faculty':
                 // console.log(this.state.usertype == 'faculty')
                 return (
                     <div>
