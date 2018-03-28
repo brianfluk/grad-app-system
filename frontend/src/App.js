@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Container, Col, Row } from 'reactstrap';
 import Navigation from './Navigation';
 import UserProfile from './UserProfile';
-import Tickets from './TicketsRoute'
-import Home from './HomeRoute'
+
+import HomeView from './HomeView';
+import TicketsView from './TicketsView';
+import GapfView from './GapfView';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   state = {users: [], tickets: []}
@@ -20,7 +22,14 @@ class App extends Component {
 
   render() {
     return (
-      <Home />
+      <div>
+        <Navigation />
+        <Switch>
+          <Route exact path='/' component={HomeView}/>
+          <Route exact path='/tickets' component={TicketsView}/>
+          <Route exact path='/gapf' component={GapfView}/>
+        </Switch>
+      </div>
     );
   }
 }

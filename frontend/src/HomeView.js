@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Container, Col, Row } from 'reactstrap';
-import Navigation from './Navigation';
 import UserProfile from './UserProfile';
-import Tickets from './TicketsRoute'
-import Home from './HomeRoute'
 
 class HomeView extends Component {
     state = {users: [], tickets: []}
@@ -22,13 +19,31 @@ class HomeView extends Component {
     return (
       <div className="App">
         <Container>
-          <Navigation />
           <Row>
             <Col md="6">
               <h1>Tickets</h1>
-              {this.state.tickets.map(ticket =>
-                <div key={ticket.id}>{ticket.id}, {ticket.username}, {ticket.status}, {ticket.recipient}</div> 
-              )}
+              <Row>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>username</th>
+                      <th>status</th>
+                      <th>name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {this.state.tickets.map(ticket =>
+                      <tr>
+                        <td>{ ticket.id }</td>
+                        <td>{ ticket.username }</td>
+                        <td>{ ticket.status }</td>
+                        <td>{ ticket.recipient }</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </Row>
             </Col>
             <Col md="6">
               <h1>Users</h1>
@@ -38,10 +53,9 @@ class HomeView extends Component {
             </Col>
           </Row>
         </Container>
-        <Tickets />
       </div>
     );
   }
 }
 
-  export default HomeView;
+export default HomeView;

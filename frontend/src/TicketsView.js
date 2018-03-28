@@ -1,12 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Navigation from './Navigation'
+import React from 'react';
+import { Container } from 'reactstrap';
 
 const TicketsView = () => (
-    <div>
-        <Navigation />
+    <Container>
         <h1> Those nice tickets go here </h1>
-    </div>
+    </Container>
   )
   
-  export default TicketsView
+export default TicketsView;
