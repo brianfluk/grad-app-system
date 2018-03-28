@@ -3,6 +3,8 @@ import './App.css';
 import { Container, Col, Row } from 'reactstrap';
 import Navigation from './Navigation';
 import UserProfile from './UserProfile';
+import Tickets from './TicketsRoute'
+import Home from './HomeRoute'
 
 class App extends Component {
   state = {users: [], tickets: []}
@@ -18,25 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Container>
-          <Navigation />
-          <Row>
-            <Col md="6">
-              <h1>Tickets</h1>
-              {this.state.tickets.map(ticket =>
-                <div key={ticket.id}>{ticket.id}, {ticket.username}, {ticket.status}, {ticket.recipient}</div> 
-              )}
-            </Col>
-            <Col md="6">
-              <h1>Users</h1>
-              {this.state.users.map(user =>
-                <div key={user.id}>{user.username}, {user.name}</div> 
-              )}
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <Home />
     );
   }
 }
