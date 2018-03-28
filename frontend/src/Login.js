@@ -23,6 +23,7 @@ class Login extends Component {
         const cookies = new Cookies();
         console.log(this.state.type);
         cookies.set('user_type', this.state.type);
+        cookies.set('username', document.getElementById('usernameid').value);
         // this.props.history.push('/tickets')
         // this.props.history.push("/");
         window.location.href = `/`; // redirect in order to refresh navbar
@@ -31,23 +32,23 @@ class Login extends Component {
     render() {
         return (
             <Container>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <FormGroup row>
                         <Label for="usernameid" sm={3}>Username</Label>
                         <Col sm={9}>
-                            <Input type="username" name="username" id="usernameid" placeholder="Username" />
+                            <Input type="username" name="username" bsSize="lg" id="usernameid" placeholder="Username" required />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label for="passwordid" sm={3}>Password</Label>
                         <Col sm={9}>
-                            <Input type="password" name="password" id="passwordid" placeholder="Password" />
+                            <Input type="password" name="password" bsSize="lg" id="passwordid" placeholder="Password" />
                         </Col>
                     </FormGroup>
                     <FormGroup row>
                         <Label for="typeid" sm={3}>User Type</Label>
                         <Col sm={9}>
-                            <Input type="select" name="type" value={this.state.type} onChange={this.handleTypeChange} id="typeid">
+                            <Input type="select" name="type" bsSize="lg" value={this.state.type} onChange={this.handleTypeChange} id="typeid" required>
                                 <option value="" selected disabled hidden>No user type selected</option>
                                 <option>Faculty</option>
                                 <option>Associate Chair Graduate</option>
@@ -56,7 +57,7 @@ class Login extends Component {
                             </Input>
                         </Col>
                     </FormGroup>
-                    <Button onClick={this.handleSubmit} color="info" className="login-button">Login</Button>
+                    <Button type="submit" color="info" className="login-button">Login</Button>
                 </Form>
             </Container>
         );

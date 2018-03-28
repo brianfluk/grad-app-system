@@ -19,13 +19,14 @@ class Navigation extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            usertype: "",
+            username: ""
         };
     }
     toggle() {
         this.setState({
             isOpen: !this.state.isOpen,
-            usertype: ""
         });
     }
     /* need to include usertype in state so we can update it if necessary
@@ -35,6 +36,10 @@ class Navigation extends Component {
         var type = cookies.get('user_type');
         if (type != this.state.usertype) {
             this.setState({usertype: type})
+        }
+        var user_name = cookies.get('username');
+        if (user_name != this.state.username) {
+            this.setState({username: user_name})
         }
     }
     render() {
@@ -52,7 +57,7 @@ class Navigation extends Component {
                                 <NavLink to="/gapf/">GAPF</NavLink>
                             </NavItem>
                         </Nav>
-                        <span className="type-indicator">logged in as {this.state.usertype}</span>
+                        <span className="type-indicator">logged in as {this.state.username} ({this.state.usertype})</span>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink to="/login">Login</NavLink>

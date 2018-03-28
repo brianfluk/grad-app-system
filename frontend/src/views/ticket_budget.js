@@ -8,10 +8,12 @@ class TicketBudget extends Component {
         return (
             <Container>
                 <Row>
-                    <Col md={4}>
+                    <Col md={6}>
+                        <h1>Users</h1>
                         <FacultyList />
                     </Col>
-                    <Col md={8}>
+                    <Col md={6}>
+                        <h1>Tickets</h1>
                         <TicketList />
                         <div> ticket for budget director </div>
                     </Col>

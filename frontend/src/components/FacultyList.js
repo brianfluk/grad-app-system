@@ -1,11 +1,14 @@
 // render columns based on props
 import React, { Component } from 'react';
-import { Row } from 'reactstrap';
+import { Row, Input, Button, Form } from 'reactstrap';
 
 class FacultyList extends Component {
     constructor(props) {
         super(props);
-        this.state = { users: [], tickets: [] }
+        this.state = { 
+            users: [], 
+            tickets: [] 
+        }
     }
 
     componentDidMount() {
@@ -16,19 +19,22 @@ class FacultyList extends Component {
     render() {
         return (
             <div>
-                <h1>Users</h1>
                 <table>
                     <thead>
                         <tr key="facultyheader">
-                            <th>Username</th>
                             <th>Full Name</th>
+                            <th>no. Domestic</th>
+                            <th>no. International</th>
+                            <th> Grant </th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.users.map(user =>
                             <tr key={user.id}>
-                                <td>{user.username}</td>
                                 <td>{user.name}</td>
+                                <td><Input type="text"/></td>
+                                <td><Input type="text"/></td>
+                                <td><Button color="success">Grant</Button></td>
                             </tr>
                         )}
                     </tbody>

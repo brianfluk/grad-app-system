@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Row, Button, Input, Form, FormGroup, Col, Table } from 'reactstrap';
 
-class TicketList extends Component {
+class TicketListGrad extends Component {
     constructor(props) {
         super(props);
         this.state = { users: [], tickets: [] }
@@ -24,6 +24,9 @@ class TicketList extends Component {
                                 <th>username</th>
                                 <th>status</th>
                                 <th>name</th>
+                                <th>Approved by Chair</th>
+                                <th>Accepted/Rejected</th>
+                                <th>Process</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,6 +36,15 @@ class TicketList extends Component {
                                     <td>{ticket.username}</td>
                                     <td>{ticket.status}</td>
                                     <td>{ticket.recipient}</td>
+                                    <td>{ticket.chair_approved}</td>
+                                    <td>{ticket.accept}</td>
+                                    {(ticket.chair_approved=="true" && ticket.status=="offer-request")
+                                        ? <Button color="success">Send Offer</Button>
+                                        : ""
+                                    } {(ticket.status="offer-pending" && (ticket.accept=="accept" || ticket.accept=="reject"))
+                                        ? <Button color="info">Process Response</Button>
+                                        : ""
+                                    }
                                 </tr>
                             )}
                         </tbody>
@@ -43,4 +55,4 @@ class TicketList extends Component {
     }
 }
 
-export default TicketList;
+export default TicketListGrad;

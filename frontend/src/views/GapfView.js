@@ -31,13 +31,11 @@ class GapfView extends Component {
                 return (
                     <div>
                         <GapfFaculty />
-                        {this.state.usertype}
                     </div>);
             default:
                 return (
                     <div>
                         <GapfAllOthers />
-                        {this.state.usertype}
                     </div>);
         }
     }

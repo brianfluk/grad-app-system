@@ -16,7 +16,7 @@ class TicketListFaculty extends Component {
     render() {
         return (
             <div>
-                <h1>Tickets</h1>
+                {/* {this.props.username} */}
                 <Row>
                     <Table>
                         <thead>
@@ -30,25 +30,19 @@ class TicketListFaculty extends Component {
                         </thead>
                         <tbody>
                             {this.state.tickets.map(ticket =>
-                                <tr key={ticket.id}>
-                                    <td>{ticket.id}</td>
-                                    <td>{ticket.username}</td>
-                                    <td>{ticket.status}</td>
-                                    <FormGroup row>
-                                        <Col sm="3">
-                                            {(ticket.status=="granted") 
-                                                ? <td><Input type="text"/></td>
-                                                : <td>{ticket.recipient}</td>
-                                            }
-                                        </Col>
-                                        <Col sm="2">
-                                            {(ticket.status=="granted") 
-                                                ? <td><Button type="submit">Request</Button></td>
-                                                : <td></td>
-                                            }
-                                        </Col>
-                                    </FormGroup>
-                                </tr>
+                                    <tr key={ticket.id}>
+                                        <td>{ticket.id}</td>
+                                        <td>{ticket.username}</td>
+                                        <td>{ticket.status}</td>
+                                        {(ticket.status=="granted") 
+                                            ? <td><Input type="text"/></td>
+                                            : <td>{ticket.recipient}</td>
+                                        }
+                                        {(ticket.status=="granted") 
+                                            ? <td><Button color="info" type="submit">Request</Button></td>
+                                            : <td></td>
+                                        }
+                                    </tr>
                             )}
                         </tbody>
                     </Table>

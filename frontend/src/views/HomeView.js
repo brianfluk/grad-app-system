@@ -35,16 +35,6 @@ class HomeView extends Component {
             </Col>
             <Col md="3"></Col>
           </Row>
-          {/* <Container>
-            <Row>
-              <Col md="6">
-                <TicketList tickets={this.state.tickets} />
-              </Col>
-              <Col md="6">
-                <FacultyList />
-              </Col>
-            </Row>
-          </Container> */}
         </div>
       );
     }
