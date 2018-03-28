@@ -41,6 +41,11 @@ class Navigation extends Component {
                                 <NavLink to="/gapf/">GAPF</NavLink>
                             </NavItem>
                         </Nav>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink to="/login">Login</NavLink>
+                            </NavItem>
+                        </Nav>
                     </Collapse>
                 </Navbar>
             </div>

@@ -1,7 +1,7 @@
 import './App.css';
 
 var UserProfile = (function() {
-    var type = "";
+    var type = "not_logged";
 
     var getType = function() {
         return type;

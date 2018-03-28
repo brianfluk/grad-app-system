@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
 import { Container, Col, Row } from 'reactstrap';
-import UserProfile from './UserProfile';
+import UserProfile from '../UserProfile';
 
 class HomeView extends Component {
     state = {users: [], tickets: []}
