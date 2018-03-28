@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import '../App.css';
 import { Container, Col, Row } from 'reactstrap';
 import UserProfile from '../UserProfile';
+import TicketList from '../components/TicketList';
+import TicketsView from './TicketsView';
+import FacultyList from '../components/FacultyList';
+import Login from '../Login';
+import { Switch, Route } from 'react-router-dom';
 
 class HomeView extends Component {
-    state = {users: [], tickets: []}
+    constructor(props) {
+      super(props);
+      this.state = {users: [], tickets: []}
+    }
   
     componentDidMount() {
       fetch('/users')
@@ -13,49 +21,33 @@ class HomeView extends Component {
       fetch('/tickets')
         .then(res => res.json())
         .then(tickets => this.setState({ tickets }));
+      console.log(this.state.tickets)
     }
       
-  render() {
-    return (
-      <div className="App">
-        <Container>
+    render() {
+      return (
+        <div className="App">
           <Row>
+            <Col md="3"></Col>
             <Col md="6">
-              <h1>Tickets</h1>
-              <Row>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>id</th>
-                      <th>username</th>
-                      <th>status</th>
-                      <th>name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {this.state.tickets.map(ticket =>
-                      <tr>
-                        <td>{ ticket.id }</td>
-                        <td>{ ticket.username }</td>
-                        <td>{ ticket.status }</td>
-                        <td>{ ticket.recipient }</td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
-              </Row>
+              <Route exact path="/" component={Login}/>
+              <Route path="/tickets" component={TicketsView}/>
             </Col>
-            <Col md="6">
-              <h1>Users</h1>
-              {this.state.users.map(user =>
-                <div key={user.id}>{user.username}, {user.name}</div> 
-              )}
-            </Col>
+            <Col md="3"></Col>
           </Row>
-        </Container>
-      </div>
-    );
-  }
+          {/* <Container>
+            <Row>
+              <Col md="6">
+                <TicketList tickets={this.state.tickets} />
+              </Col>
+              <Col md="6">
+                <FacultyList />
+              </Col>
+            </Row>
+          </Container> */}
+        </div>
+      );
+    }
 }
 
 export default HomeView;

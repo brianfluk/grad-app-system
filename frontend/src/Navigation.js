@@ -10,6 +10,7 @@ import {
     // NavLink,
 } from 'reactstrap';
 import NavLink from './nav_link';
+import Cookies from 'universal-cookie';
 
     
 class Navigation extends Component {
@@ -23,8 +24,18 @@ class Navigation extends Component {
     }
     toggle() {
         this.setState({
-            isOpen: !this.state.isOpen
+            isOpen: !this.state.isOpen,
+            usertype: ""
         });
+    }
+    /* need to include usertype in state so we can update it if necessary
+    in order to re-render the component */
+    componentWillMount() {
+        const cookies = new Cookies();
+        var type = cookies.get('user_type');
+        if (type != this.state.usertype) {
+            this.setState({usertype: type})
+        }
     }
     render() {
         return (
@@ -41,6 +52,7 @@ class Navigation extends Component {
                                 <NavLink to="/gapf/">GAPF</NavLink>
                             </NavItem>
                         </Nav>
+                        <span className="type-indicator">logged in as {this.state.usertype}</span>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink to="/login">Login</NavLink>

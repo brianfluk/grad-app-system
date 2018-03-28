@@ -34,11 +34,11 @@ class GapfView extends Component {
                         {this.state.usertype}
                     </div>);
             default:
-            return (
-                <div>
-                    <GapfAllOthers />
-                    {this.state.usertype}
-                </div>);
+                return (
+                    <div>
+                        <GapfAllOthers />
+                        {this.state.usertype}
+                    </div>);
         }
     }
 }

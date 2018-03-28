@@ -5,7 +5,24 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.json([{
     username: "jwhite",
-    url: "http://www.google.com"
+    url: "http://www.google.com/search?q=Hi+there",
+    status: "DRAFT"
+  }, {
+    username: "pblue",
+    url: "http://www.google.com/search?q=John+White",
+    status: "DRAFT"
+  }, {
+    username: "oford",
+    url: "http://www.google.com",
+    status: "SUBMITTED"
+  }, {
+    username: "fmay",
+    url: "http://www.google.com",
+    status: "SUBMITTED"
+  }, {
+    username: "ositter",
+    url: "http://www.google.com",
+    status: "SUBMITTED"
   }]);
 });
 

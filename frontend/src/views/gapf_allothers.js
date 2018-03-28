@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { Container } from 'reactstrap';
 
 class GapfAllOthers extends Component {
     render() {
         return (
-            <div> gapf for all others </div>
+            <Container>
+                <div> gapf for all others </div>
+            </Container>
         );
     }
 }

@@ -1,5 +1,12 @@
+.login-button {
+  width: 100%;
+}
+.type-indicator {
+  color: rgb(170, 170, 170);
+  font-style: italic;
+}
 .nav-active {
-  font-weight: bold;
+  /* font-weight: bold; */
   margin: 9px;
   padding: 9px;
   color: rgb(25, 149, 180);
@@ -13,7 +20,8 @@
 
 .nav-inactive {
   font-size: 16px;
-  margin: 10px;
+  margin: 9px;
+  padding: 9px;
   color: rgb(170, 170, 170);
 }
 .nav-inactive:hover{
