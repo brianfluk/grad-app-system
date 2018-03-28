@@ -7,11 +7,9 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'reactstrap';
+    // NavLink,
+} from 'reactstrap';
+import NavLink from './nav_link';
 
     
 class Navigation extends Component {
@@ -32,15 +30,20 @@ class Navigation extends Component {
         return (
             <div>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">ticketify</NavbarBrand>
+                    <NavbarBrand href="/" className="brand">Tickets Я Us</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="mr-auto" navbar>
                             <NavItem>
-                                <NavLink href="/tickets/">Tickets</NavLink>
+                                <NavLink to="/tickets/">Tickets</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/gapf/">GAPF</NavLink>
+                                <NavLink to="/gapf/">GAPF</NavLink>
+                            </NavItem>
+                        </Nav>
+                        <Nav className="ml-auto" navbar>
+                            <NavItem>
+                                <NavLink to="/login">Login</NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

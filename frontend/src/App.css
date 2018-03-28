@@ -1,3 +1,30 @@
+.nav-active {
+  font-weight: bold;
+  margin: 9px;
+  padding: 9px;
+  color: rgb(25, 149, 180);
+  border-bottom: 3px solid rgb(25, 149, 180); 
+  /* background-color: rgba(25, 149, 180, 0.2);  */
+}
+.nav-active:hover{
+  text-decoration: none;
+  color: rgb(25, 149, 180);
+}
+
+.nav-inactive {
+  font-size: 16px;
+  margin: 10px;
+  color: rgb(170, 170, 170);
+}
+.nav-inactive:hover{
+  text-decoration: none;
+  color: rgb(25, 149, 180);
+}
+
+.brand {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
 .App {
   text-align: center;
 }
