@@ -38,10 +38,10 @@ class TicketListGrad extends Component {
                                     <td>{ticket.recipient}</td>
                                     <td>{ticket.chair_approved}</td>
                                     <td>{ticket.accept}</td>
-                                    {(ticket.chair_approved=="true" && ticket.status=="offer-request")
+                                    {(ticket.chair_approved==="true" && ticket.status==="offer-request")
                                         ? <Button color="success">Send Offer</Button>
                                         : ""
-                                    } {(ticket.status="offer-pending" && (ticket.accept=="accept" || ticket.accept=="reject"))
+                                    } {(ticket.status==="offer-pending" && (ticket.accept==="accept" || ticket.accept==="reject"))
                                         ? <Button color="info">Process Response</Button>
                                         : ""
                                     }

@@ -35,11 +35,11 @@ class TicketListFaculty extends Component {
                                         <td>{ticket.id}</td>
                                         <td>{ticket.username}</td>
                                         <td>{ticket.status}</td>
-                                        {(ticket.status=="granted") 
+                                        {(ticket.status==="granted") 
                                             ? <td><Input type="text"/></td>
                                             : <td>{ticket.recipient}</td>
                                         }
-                                        {(ticket.status=="granted") 
+                                        {(ticket.status==="granted") 
                                             ? <td><Button color="info" type="submit">Request</Button></td>
                                             : <td></td>
                                         }

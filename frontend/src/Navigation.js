@@ -34,11 +34,11 @@ class Navigation extends Component {
     componentWillMount() {
         const cookies = new Cookies();
         var type = cookies.get('user_type');
-        if (type != this.state.usertype) {
+        if (type !== this.state.usertype) {
             this.setState({usertype: type})
         }
         var user_name = cookies.get('username');
-        if (user_name != this.state.username) {
+        if (user_name !== this.state.username) {
             this.setState({username: user_name})
         }
     }
