@@ -8,7 +8,7 @@ class TicketListFaculty extends Component {
         this.state = { users: [], tickets: [] }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         fetch('/tickets')
             .then(res => res.json())
             .then(tickets => this.setState({ tickets }));

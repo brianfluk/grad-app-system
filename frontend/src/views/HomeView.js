@@ -14,7 +14,7 @@ class HomeView extends Component {
       this.state = {users: [], tickets: []}
     }
   
-    componentDidMount() {
+    componentWillMount() {
       fetch('/users')
         .then(res => res.json())
         .then(users => this.setState({ users }));
