@@ -8,9 +8,8 @@ class TicketGrad extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <h1>Tickets</h1>
+                        <h1 className="display-4">Tickets</h1>
                         <TicketListGrad />
-                        <div> ticket for graduate office staff </div>
                     </Col>
                 </Row>
             </Container>

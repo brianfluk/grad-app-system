@@ -9,11 +9,11 @@ class TicketAssociate extends Component {
             <Container>
                 <Row>
                     <Col md={4}>
-                        <h1>Tickets</h1>
+                        <h1 className="display-4">Tickets</h1>
                         <TicketList />
                     </Col>
                     <Col md={8}>
-                        <h1>Other Tickets</h1>
+                        <h1 className="display-4">Other Tickets</h1>
                         <TicketList />
                         <Button color="success" className="full-width">Approve</Button>
                     </Col>

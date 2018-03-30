@@ -25,6 +25,7 @@ class GapfAllOthers extends Component {
     render() {
         return (
             <Container>
+                <h1 className="display-4">GAPF Applications</h1>
                 <Table>
                     <thead>
                         <tr key="gapfheader">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Container, Col, Row } from 'reactstrap';
+import { Container, Col, Row, Jumbotron } from 'reactstrap';
 import UserProfile from '../UserProfile';
 import TicketList from '../components/TicketList';
 import TicketsView from './TicketsView';
@@ -27,6 +27,11 @@ class HomeView extends Component {
     render() {
       return (
         <div className="App">
+          <Jumbotron>
+            <h1 className="display-2">Tickets Я Us</h1>
+            <hr className="my-2" />
+            <p className="lead">Your Graduate Application ticket-system</p>
+          </Jumbotron>
           <Row>
             <Col md="3"></Col>
             <Col md="6">
@@ -35,6 +40,10 @@ class HomeView extends Component {
             </Col>
             <Col md="3"></Col>
           </Row>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </div>
       );
     }

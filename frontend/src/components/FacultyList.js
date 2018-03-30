@@ -1,6 +1,6 @@
 // render columns based on props
 import React, { Component } from 'react';
-import { Row, Input, Button, Form } from 'reactstrap';
+import { Row, Input, Button, Form, Table } from 'reactstrap';
 
 class FacultyList extends Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class FacultyList extends Component {
     render() {
         return (
             <div>
-                <table>
+                <Table>
                     <thead>
                         <tr key="facultyheader">
                             <th>Full Name</th>
@@ -34,11 +34,11 @@ class FacultyList extends Component {
                                 <td>{user.name}</td>
                                 <td><Input type="text"/></td>
                                 <td><Input type="text"/></td>
-                                <td><Button color="success">Grant</Button></td>
+                                <td><Button color="info">Grant</Button></td>
                             </tr>
                         )}
                     </tbody>
-                </table>
+                </Table>
             </div>
         );
     }

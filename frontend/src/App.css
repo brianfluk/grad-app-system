@@ -10,15 +10,26 @@
 }
 .nav-active {
   /* font-weight: bold; */
+  font-size: 16px;
   margin: 9px;
   padding: 9px;
   color: rgb(25, 149, 180);
   border-bottom: 3px solid rgb(25, 149, 180); 
+  animation-name: line-thickening;
+  animation-duration: 0.3s;
   /* background-color: rgba(25, 149, 180, 0.2);  */
 }
 .nav-active:hover{
   text-decoration: none;
   color: rgb(25, 149, 180);
+}
+@keyframes line-thickening {
+  0% {border-bottom: 0px solid rgba(25, 149, 180, 0.1);}
+  100% {border-bottom: 3px solid rgb(25, 149, 180);}
+}
+@keyframes line-thinning {
+  0% {}
+  100% {border-bottom: 0px solid rgba(25, 149, 180, 0);}
 }
 
 .nav-inactive {
@@ -26,14 +37,22 @@
   margin: 9px;
   padding: 9px;
   color: rgb(170, 170, 170);
+  animation-name: line-thinning;
+  animation-duration: 0.20s;
 }
 .nav-inactive:hover{
   text-decoration: none;
   color: rgb(25, 149, 180);
 }
 
+.navigation {
+  box-shadow: 0px 1px 20px rgba(25, 149, 180, 0.2);
+  margin-bottom: 30px;
+}
+
 .brand {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Osaka','Helvetica', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  letter-spacing: 0.7px;
   font-weight: bold;
 }
 .App {

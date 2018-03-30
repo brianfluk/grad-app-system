@@ -19,19 +19,18 @@ class Login extends Component {
     }
     handleSubmit() {
         console.log('clicked');
-        
         const cookies = new Cookies();
         console.log(this.state.type);
         cookies.set('user_type', this.state.type);
         cookies.set('username', document.getElementById('usernameid').value);
-        // this.props.history.push('/tickets')
-        // this.props.history.push("/");
         window.location.href = `/`; // redirect in order to refresh navbar
     }
     
     render() {
         return (
+            // <MuiThemeProvider>
             <Container>
+                <h1 className="text-center display-4">Login</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup row>
                         <Label for="usernameid" sm={3}>Username</Label>

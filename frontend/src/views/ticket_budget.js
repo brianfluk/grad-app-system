@@ -9,13 +9,12 @@ class TicketBudget extends Component {
             <Container>
                 <Row>
                     <Col md={6}>
-                        <h1>Users</h1>
+                        <h1 className="display-4">Users</h1>
                         <FacultyList />
                     </Col>
                     <Col md={6}>
-                        <h1>Tickets</h1>
+                        <h1 className="display-4">Tickets</h1>
                         <TicketList />
-                        <div> ticket for budget director </div>
                     </Col>
                 </Row>
             </Container>
