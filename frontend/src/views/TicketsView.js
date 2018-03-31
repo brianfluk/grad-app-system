@@ -20,7 +20,7 @@ class TicketsView extends Component {
     componentWillMount() {
         const cookies = new Cookies();
         var type = cookies.get('user_type');
-        if (type != this.state.usertype) {
+        if (type !== this.state.usertype) {
             this.setState({usertype: type})
         }
     }
@@ -31,31 +31,31 @@ class TicketsView extends Component {
                 return (
                     <div>
                         <TicketFaculty />
-                        {this.state.usertype}
+                        current user type: {this.state.usertype}
                     </div>);
             case 'Associate Chair Graduate':
                 return (
                     <div>
                         <TicketAssociate />
-                        {this.state.usertype}
+                        current user type: {this.state.usertype}
                     </div>);
             case 'Grad Office Staff':
                 return (
                     <div>
                         <TicketGrad />
-                        {this.state.usertype}
+                        current user type: {this.state.usertype}
                     </div>);
             case 'Budget Director':
                 return (
                     <div>
                         <TicketBudget />
-                        {this.state.usertype}
+                        current user type: {this.state.usertype}
                     </div>);
             default:
                 return (
                     <div>
                         <TicketFaculty />
-                        {this.state.usertype}
+                        current user type: {this.state.usertype}
                     </div>);
         }
     }

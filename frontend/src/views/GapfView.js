@@ -20,7 +20,7 @@ class GapfView extends Component {
     componentWillMount() {
         const cookies = new Cookies();
         var type = cookies.get('user_type');
-        if (type != this.state.usertype) {
+        if (type !== this.state.usertype) {
             this.setState({usertype: type})
         }
     }
@@ -31,14 +31,12 @@ class GapfView extends Component {
                 return (
                     <div>
                         <GapfFaculty />
-                        {this.state.usertype}
                     </div>);
             default:
-            return (
-                <div>
-                    <GapfAllOthers />
-                    {this.state.usertype}
-                </div>);
+                return (
+                    <div>
+                        <GapfAllOthers />
+                    </div>);
         }
     }
 }

@@ -34,7 +34,7 @@ class App extends Component {
           <Route exact path='/' component={HomeView}/>
           <Route exact path='/tickets' component={TicketsView}/>
           <Route exact path='/gapf' component={GapfView}/>
-          <Route exact path='/login' component={Login}/>
+          <Route path='/login' component={Login}/>
         </Switch>
       </div>
     );

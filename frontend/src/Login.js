@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Input, Button, Col } from 'reactstrap';
 import Cookies from 'universal-cookie';
 
 class Login extends Component {
@@ -11,7 +11,7 @@ class Login extends Component {
             username: "",
             password: "",
             type: ""
-        }
+        };
     }
 
     handleTypeChange(e) {
@@ -19,35 +19,44 @@ class Login extends Component {
     }
     handleSubmit() {
         console.log('clicked');
-        
         const cookies = new Cookies();
-        // cookies.set('user_type', )
         console.log(this.state.type);
         cookies.set('user_type', this.state.type);
+        cookies.set('username', document.getElementById('usernameid').value);
+        window.location.href = `/`; // redirect in order to refresh navbar
     }
     
     render() {
         return (
+            // <MuiThemeProvider>
             <Container>
-                <Form>
-                    <FormGroup>
-                        <Label for="usernameid">Username</Label>
-                        <Input type="username" name="username" id="usernameid" placeholder="username" />
+                <h1 className="text-center display-4">Login</h1>
+                <Form onSubmit={this.handleSubmit}>
+                    <FormGroup row>
+                        <Label for="usernameid" sm={3}>Username</Label>
+                        <Col sm={9}>
+                            <Input type="username" name="username" bsSize="lg" id="usernameid" placeholder="Username" required />
+                        </Col>
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="passwordid">Password</Label>
-                        <Input type="password" name="password" id="passwordid" placeholder="password" />
+                    <FormGroup row>
+                        <Label for="passwordid" sm={3}>Password</Label>
+                        <Col sm={9}>
+                            <Input type="password" name="password" bsSize="lg" id="passwordid" placeholder="Password" />
+                        </Col>
                     </FormGroup>
-                    <FormGroup>
-                        <Label for="typeid">User Type</Label>
-                        <Input type="select" name="type" value={this.state.type} onChange={this.handleTypeChange} id="typeid">
-                            <option>Faculty</option>
-                            <option>Associate Chair Graduate</option>
-                            <option>Grad Office Staff</option>
-                            <option>Budget Director</option>
-                        </Input>
+                    <FormGroup row>
+                        <Label for="typeid" sm={3}>User Type</Label>
+                        <Col sm={9}>
+                            <Input type="select" name="type" bsSize="lg" value={this.state.type} onChange={this.handleTypeChange} id="typeid" required>
+                                <option value="" selected disabled hidden>No user type selected</option>
+                                <option>Faculty</option>
+                                <option>Associate Chair Graduate</option>
+                                <option>Grad Office Staff</option>
+                                <option>Budget Director</option>
+                            </Input>
+                        </Col>
                     </FormGroup>
-                    <Button onClick={this.handleSubmit}>Submit</Button>
+                    <Button type="submit" color="info" className="login-button">Login</Button>
                 </Form>
             </Container>
         );
