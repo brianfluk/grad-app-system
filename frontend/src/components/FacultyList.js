@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Row, Input, Button, Form, Table } from 'reactstrap';
 
+
 class FacultyList extends Component {
     constructor(props) {
         super(props);
@@ -32,13 +33,14 @@ class FacultyList extends Component {
                         {this.state.users.map(user =>
                             <tr key={user.id}>
                                 <td>{user.name}</td>
-                                <td><Input type="text"/></td>
-                                <td><Input type="text"/></td>
+                                <td><Input type="number"/></td>
+                                <td><Input type="number"/></td>
                                 <td><Button color="info">Grant</Button></td>
                             </tr>
                         )}
                     </tbody>
                 </Table>
+                <Button color="info" className="full-width">Grant All</Button>
             </div>
         );
     }

@@ -9,7 +9,7 @@ class TicketBudget extends Component {
             <Container>
                 <Row>
                     <Col md={6}>
-                        <h1 className="display-4">Users</h1>
+                        <h1 className="display-4">Faculty</h1>
                         <FacultyList />
                     </Col>
                     <Col md={6}>

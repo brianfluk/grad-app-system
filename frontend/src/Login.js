@@ -24,6 +24,7 @@ class Login extends Component {
         cookies.set('user_type', this.state.type);
         cookies.set('username', document.getElementById('usernameid').value);
         window.location.href = `/`; // redirect in order to refresh navbar
+        // window.location.href=`/tickets`;
     }
     
     render() {
@@ -31,7 +32,7 @@ class Login extends Component {
             // <MuiThemeProvider>
             <Container>
                 <h1 className="text-center display-4">Login</h1>
-                <Form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.handleSubmit} className="lead">
                     <FormGroup row>
                         <Label for="usernameid" sm={3}>Username</Label>
                         <Col sm={9}>
@@ -56,7 +57,7 @@ class Login extends Component {
                             </Input>
                         </Col>
                     </FormGroup>
-                    <Button type="submit" color="info" className="login-button">Login</Button>
+                    <Button type="submit" color="info" bsSize="lg" className="login-button">Login</Button>
                 </Form>
             </Container>
         );

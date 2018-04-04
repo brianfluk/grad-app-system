@@ -31,31 +31,26 @@ class TicketsView extends Component {
                 return (
                     <div>
                         <TicketFaculty />
-                        current user type: {this.state.usertype}
                     </div>);
             case 'Associate Chair Graduate':
                 return (
                     <div>
                         <TicketAssociate />
-                        current user type: {this.state.usertype}
                     </div>);
             case 'Grad Office Staff':
                 return (
                     <div>
                         <TicketGrad />
-                        current user type: {this.state.usertype}
                     </div>);
             case 'Budget Director':
                 return (
                     <div>
                         <TicketBudget />
-                        current user type: {this.state.usertype}
                     </div>);
             default:
                 return (
                     <div>
                         <TicketFaculty />
-                        current user type: {this.state.usertype}
                     </div>);
         }
     }

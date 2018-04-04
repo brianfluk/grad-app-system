@@ -28,7 +28,7 @@ class HomeView extends Component {
       return (
         <div className="App">
           <Jumbotron>
-            <h1 className="display-2">Tickets Я Us</h1>
+            <h1 className="display-1">Tickets Я Us</h1>
             <hr className="my-2" />
             <p className="lead">Your Graduate Application ticket-system</p>
           </Jumbotron>
